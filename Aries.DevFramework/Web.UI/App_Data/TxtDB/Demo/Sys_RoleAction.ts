@@ -1,0 +1,3 @@
+{"ColumnName":"RoleID","SqlType":"System.String","IsAutoIncrement":false,"IsCanNull":true,"MaxSize":-1,"Scale":0,"IsPrimaryKey":false,"DefaultValue":"","Description":"","TableName":"","IsUniqueKey":false,"IsForeignKey":false,"FKTableName":""},
+{"ColumnName":"MenuID","SqlType":"System.String","IsAutoIncrement":false,"IsCanNull":true,"MaxSize":-1,"Scale":0,"IsPrimaryKey":false,"DefaultValue":"","Description":"","TableName":"","IsUniqueKey":false,"IsForeignKey":false,"FKTableName":""},
+{"ColumnName":"ActionID","SqlType":"System.String","IsAutoIncrement":false,"IsCanNull":true,"MaxSize":-1,"Scale":0,"IsPrimaryKey":false,"DefaultValue":"","Description":"","TableName":"","IsUniqueKey":false,"IsForeignKey":false,"FKTableName":""}

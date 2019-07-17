@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="/Style/JS/Aries.Loader.js"></script>
+    <script type="text/javascript" src="/Style/JS/jquery.html5uploader.js"></script>
+</head>
+<body>
+    <table id="guid"></table>
+    <!--<input type="file" id="file" multiple="multiple" size="200" />-->
+</body>
+</html>
+<script type="text/javascript">
+    var grid = new AR.DataGrid('Files', 'Files','guid');
+
+    grid.ToolBar.add('图片上传', null, 10, 'btn-lg', "edit", "btnUpload");
+    //grid.ToolBar.items["图片上传"].setAttribute("multiple",'true')
+
+    grid.isEditor = true;
+    var opts = {};
+    opts.data = { "sys_method": "Upload", "sort": "aaa" };//提交的参数
+    opts.onComplete = function (file, data) {
+        alert("返回的数据：" + data.msg);
+    }
+    grid.ToolBar.onAfterExecute = function () {
+        var $btnUpload = this.Items["btnUpload"].$target;
+        new AR.Upload($btnUpload, opts);//为按钮增加上传事件
+    }
+
+    grid.options.onLoadSuccess = function () {
+        var items = document.getElementsByName("btnUpload");
+        for (var i = 0; i < items.length; i++) {
+            items[i].setAttribute("title", "b");
+            new AR.Upload(items[i], opts);//为按钮增加上传事件
+        }
+    }
+    grid.bind();
+
+
+    function imgFormatter(value, row, index) {
+        //$.each(row, function (k) {
+        //    alert(row[k]);
+        //}
+        return "<a href='"+index+"'><img src='" + value + "\' /></a>";
+    }
+</script>

@@ -1,0 +1,48 @@
+V5.8.2.3 Record On : 2019-07-11 09:55:12 : http://localhost:63984/Web/SysAdmin/ajax.html?sys_method=Add&sys_objName=Sys_Menu&sys_rnd=0.8401023453255541
+
+Referer : http://localhost:63984/Web/SysAdmin/MenuEdit.html
+
+MsSql Call Function::ExeScalar():违反了 PRIMARY KEY 约束 'PK__Sys_Menu__C99ED2503C69FB99'。不能在对象 'dbo.Sys_Menu' 中插入重复键。
+语句已终止。
+MsSql.Workflow.SQL: 
+insert into [Sys_Menu]([MenuID],[ParentMenuID],[MenuName],[MenuUrl],[MenuLevel],[SortOrder],[IsShow],[ActionIDs]) Values(@MenuID,@ParentMenuID,@MenuName,@MenuUrl,@MenuLevel,@SortOrder,@IsShow,@ActionIDs) select '626e25c2-2dde-4847-8edc-e87dbb92bb1d' as OutPutValue
+Para: @MenuID-> 626e25c2-2dde-4847-8edc-e87dbb92bb1d
+Para: @ParentMenuID-> 626e25c2-2dde-4847-8edc-e87dbb92bb1d
+Para: @MenuName-> 图片中心
+Para: @MenuUrl-> /Web/SysAdmin/CustomView.html?objname=Files
+Para: @MenuLevel-> 3
+Para: @SortOrder-> 100
+Para: @IsShow-> 1
+Para: @ActionIDs-> d0739946-99e0-4770-8d2a-6faf25a8457a,1c613ade-6665-49fb-b298-faf1b82dd6d2,cf8f418e-2468-4f6c-96cf-3302a2d9fa9b,15b73068-6c0f-49c9-800c-a7216cb2d079,71e39291-59d3-4ed6-9ae1-0d7df7da2f91,8a59a358-5a8f-4cb4-b600-9313028b911b,630e0452-00d6-4452-8a5c-19b2c3115ee3
+ExeScalar():违反了 PRIMARY KEY 约束 'PK__Sys_Menu__C99ED2503C69FB99'。不能在对象 'dbo.Sys_Menu' 中插入重复键。
+语句已终止。
+
+
+---------------------------------------
+
+V5.8.2.3 Record On : 2019-07-11 10:04:55 : http://localhost:63984/demo/ajax.html?sys_method=GetList&sys_objName=Demo_Area&sys_tableName=Demo_Area
+
+Referer : http://localhost:63984/demo/treegrid.html
+
+MsSql Call Function::ExeDataReader():关键字 'desc' 附近有语法错误。
+MsSql.Workflow.SQL: 
+select top 15 [ID],[Code],[Name],[PCode],[Sort],[Lvl] from [Demo_Area] where id > 3000 order by desc
+<hr>warn : [Demo_Area] no contains column Desc
+ExeDataReader():关键字 'desc' 附近有语法错误。
+
+
+---------------------------------------
+
+V5.8.2.3 Record On : 2019-07-11 10:05:00 : http://localhost:63984/demo/ajax.html?sys_method=GetList&sys_objName=Demo_Area&sys_tableName=Demo_Area
+
+Referer : http://localhost:63984/demo/treegrid.html
+
+MsSql Call Function::ExeDataReader():关键字 'desc' 附近有语法错误。
+MsSql.Workflow.SQL: 
+select top 15 [ID],[Code],[Name],[PCode],[Sort],[Lvl] from [Demo_Area] where id > 3000 order by desc desc
+<hr>warn : [Demo_Area] no contains column Desc
+ExeDataReader():关键字 'desc' 附近有语法错误。
+
+
+---------------------------------------
+

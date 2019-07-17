@@ -1,0 +1,23 @@
+V5.8.2.3 Record On : 2019-07-05 18:29:31 : http://127.0.0.1/
+
+[Exception]:V5.8.2.3 Txt.Demo:check the tablename  "Config_KeyValue" is exist?
+error::
+   在 CYQ.Data.Error.Throw(String msg)
+   在 CYQ.Data.MAction.InitRowSchema(MDataRow row, Boolean resetState)
+   在 CYQ.Data.MAction.Init(Object tableObj, String conn, Boolean resetState, String newDbName, Boolean isFirstInit)
+   在 CYQ.Data.MAction..ctor(Object tableNamesEnum)
+   在 Aries.Core.Config.KeyValueConfig.get_KeyValueTable() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\KeyValueConfig.cs:行号 31
+   在 Aries.Core.Config.LangConst.getConfig(String& theme, String& language) 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 99
+   在 Aries.Core.Config.LangConst.InitKeyValue() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 132
+   在 Aries.Core.Config.LangConst..cctor() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 78
+   在 CYQ.Data.Error.Throw(String msg)
+   在 CYQ.Data.MAction.InitRowSchema(MDataRow row, Boolean resetState)
+   在 CYQ.Data.MAction.Init(Object tableObj, String conn, Boolean resetState, String newDbName, Boolean isFirstInit)
+   在 CYQ.Data.MAction..ctor(Object tableNamesEnum)
+   在 Aries.Core.Config.KeyValueConfig.get_KeyValueTable() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\KeyValueConfig.cs:行号 31
+   在 Aries.Core.Config.LangConst.getConfig(String& theme, String& language) 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 99
+   在 Aries.Core.Config.LangConst.InitKeyValue() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 132
+   在 Aries.Core.Config.LangConst..cctor() 位置 D:\work\Aries\Aries.DevFramework\Aries.Core\Config\LangConst.cs:行号 78
+
+---------------------------------------
+

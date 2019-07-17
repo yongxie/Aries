@@ -1,0 +1,9 @@
+V5.8.2.3 Record On : 2019-07-11 14:03:40 : http://localhost:63984/Demo/ajax.html?sys_method=Update&sys_objName=Demo_TestA&sys_tableName=Demo_TestA&sys_mid=13ce68d5-1261-4bec-95ac-b56f708f480b
+
+Referer : http://localhost:63984/Demo/edit.html?id=f896c770-e4ab-4be2-bd37-e20033427b55
+
+ChangeType Error£ºColumnName¡¾F4¡¿(System.Int32) £¬ Value£º¡¾¡¿
+
+
+---------------------------------------
+

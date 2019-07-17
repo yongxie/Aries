@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Aries.Controllers</AssemblyName>
+    <RootNamespace>Aries.Controllers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aries.Core\Aries.Core_NetCore.csproj" />
+    <ProjectReference Include="..\Aries.Logic\Aries.Logic_NetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CYQ.Data">
+      <HintPath>..\DLL\NetCore\CYQ.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

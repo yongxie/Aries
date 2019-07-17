@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="/Style/JS/Aries.Loader.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://jq22.qiniudn.com/masonry-docs.min.js"></script>
+    <style type="text/css">
+        .container-fluid {
+            padding: 20px;
+        }
+
+        .box {
+            margin-bottom: 20px;
+            float: left;
+            width: 220px;
+        }
+
+            .box img {
+                max-width: 100%
+            }
+
+*{margin:0px;padding:0px;}
+#content{width:800px;height:180px;margin:200px auto 0px;border-bottom:1px solid #990033;}
+#content ul{list-style:none;width:750px;height:180px;margin:auto;}
+#content ul li{width:250px;height:180px;float:left;position:relative;overflow:hidden;}
+#content ul li div.tit{width:250px;height:50px;position:absolute;left:0px;bottom:-50px;background:rgba(0,0,0,0.5);}
+#content ul li div.tit p{color:#fff;text-align:center;margin:3px;font-family:"微软雅黑";}
+#footer{width:800px;height:160px;}
+#footer div.tel{width:100%;height:30px;color:#993300;font-size:12px;margin-left:40px;margin-top:10px;margin-bottom:20px;}
+#footer div.tel p a{width:50px;height:32px;display:inline-block;vertical-align:middle;}
+#footer div.detail{width:100%;height:50px;margin-left:40px;color:#993300;font-size:12px;}
+#footer div.detail p{margin-top:5px;}
+#footer div.detail p.curr{font-weight:bold;}
+#footer div.footer-nav{width:280px;float:right;color:#993300;font-size:12px;}
+#footer div.footer-nav ul li{list-style:none;float:left;margin-top:10px;}
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <ul>
+            <li>
+                <img src="../缩略图/10197997_003647426000_2.jpg">
+                <div class="tit">
+                    <p>世界上最好的</p>
+                    <p>Nian糕</p>
+                </div>
+            </li>
+            <li>
+                <img src="../缩略图/3961114_020908597000_2.jpg">
+                <div class="tit">
+                    <p>世界上最好的</p>
+                    <p>Nian糕</p>
+                </div>
+            </li>
+            <li>
+                <img src="../缩略图/8649940_220505558734_2.jpg">
+                <div class="tit">
+                    <p>世界上最好的</p>
+                    <p>Nian糕</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="masonry" class="container-fluid">
+        <!--<div class="box">
+            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/10197997_003647426000_2.jpg" /></a>
+        </div>
+        <div class="box">
+            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/3961114_020908597000_2.jpg" /></a>
+        </div>
+        <div class="box">
+            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/8649940_220505558734_2.jpg" /></a>
+        </div>-->
+        ...
+    </div>
+
+</body>
+</html >
+<script type="text/javascript" >
+
+    $("#content ul li").hover(function(){//鼠标悬停
+        $(this).find("div").stop().animate({
+            "bottom":"0px"
+        },100);                
+    },function(){//鼠标离开
+        $(this).find("div").stop().animate({
+            "bottom":"-50px"
+        },100);
+    });
+    AR.Form.onBeforeExecute = function ()
+    {
+        AR.Ajax.post('GetData', null, { page: 1,sort:'测试' }, function (result) {
+            if (result.success) {
+                for (var i = 0; i < result.rows.length; i++) {
+                    var div1 = document.getElementById("masonry");
+                    var div = document.createElement("div") //创建一个div
+                    div.className = "box";
+                    div.innerHTML = "<a href='"+result.rows[i]["thumbnailpath"]+"'><img src='"+result.rows[i]["thumbnailpath"]+"' /></a>";
+                                        
+                    div1.appendChild(div)//将div添加到body下面
+
+                    //console.log(result.rows[i]["thumbnailpath"]);
+                }
+                //console.log(result.rows);
+            }
+        });
+    }
+
+    $(function() {
+    var $container = $('#masonry');
+    $container.imagesLoaded(function() {
+    $container.masonry({
+            itemSelector: '.box',
+            gutter: 20,
+            isAnimated: true,
+        });
+    });
+    });
+
+    var edit=true;//可控元素
+            $(window).scroll(
+                    function () {
+                        var scrollTop = $(this).scrollTop();
+                        var scrollHeight = $(document).height();
+                        var windowHeight = $(this).height();
+                        if (scrollTop + windowHeight+100 >= scrollHeight && edit) {
+                            edit=false;
+                            console.log("来，跟着一起。哈哈哈哈哈哈");
+                            setTimeout("edit=true;",1000);
+                        }
+                    }
+            );
+</script >

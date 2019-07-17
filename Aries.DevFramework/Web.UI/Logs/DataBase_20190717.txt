@@ -1,0 +1,22 @@
+V5.8.2.3 Record On : 2019-07-17 15:08:06 : http://localhost:63984/Web/SysAdmin/ajax.html?sys_method=Add&sys_objName=Sys_Menu&sys_rnd=0.42279159327096716
+
+Referer : http://localhost:63984/Web/SysAdmin/MenuEdit.html
+
+MsSql Call Function::ExeScalar():违反了 PRIMARY KEY 约束 'PK__Sys_Menu__C99ED2503C69FB99'。不能在对象 'dbo.Sys_Menu' 中插入重复键。
+语句已终止。
+MsSql.Workflow.SQL: 
+insert into [Sys_Menu]([MenuID],[ParentMenuID],[MenuName],[MenuUrl],[MenuLevel],[SortOrder],[IsShow],[ActionIDs]) Values(@MenuID,@ParentMenuID,@MenuName,@MenuUrl,@MenuLevel,@SortOrder,@IsShow,@ActionIDs) select '626e25c2-2dde-4847-8edc-e87dbb92bb1d' as OutPutValue
+Para: @MenuID-> 626e25c2-2dde-4847-8edc-e87dbb92bb1d
+Para: @ParentMenuID-> 626e25c2-2dde-4847-8edc-e87dbb92bb1d
+Para: @MenuName-> 显示中心
+Para: @MenuUrl-> Demo/ImageShow.html
+Para: @MenuLevel-> 3
+Para: @SortOrder-> 100
+Para: @IsShow-> 1
+Para: @ActionIDs-> 15b73068-6c0f-49c9-800c-a7216cb2d079
+ExeScalar():违反了 PRIMARY KEY 约束 'PK__Sys_Menu__C99ED2503C69FB99'。不能在对象 'dbo.Sys_Menu' 中插入重复键。
+语句已终止。
+
+
+---------------------------------------
+
