@@ -4,122 +4,91 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <script src="/Style/JS/Aries.Loader.js"></script>
-    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://jq22.qiniudn.com/masonry-docs.min.js"></script>
-    <style type="text/css">
-        .container-fluid {
-            padding: 20px;
+    <script src="/Style/JS/jquery.xgallerify.min.js"></script>
+    <style>
+        body {
+            text-align: center;
         }
 
-        .box {
-            margin-bottom: 20px;
-            float: left;
-            width: 220px;
+        .photo {
+            position: relative;
         }
 
-            .box img {
-                max-width: 100%
-            }
+        .title {
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            /*text-align: center;*/
+            right: 0px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #00ff90;
+            white-space: normal;
+        }
 
-*{margin:0px;padding:0px;}
-#content{width:800px;height:180px;margin:200px auto 0px;border-bottom:1px solid #990033;}
-#content ul{list-style:none;width:750px;height:180px;margin:auto;}
-#content ul li{width:250px;height:180px;float:left;position:relative;overflow:hidden;}
-#content ul li div.tit{width:250px;height:50px;position:absolute;left:0px;bottom:-50px;background:rgba(0,0,0,0.5);}
-#content ul li div.tit p{color:#fff;text-align:center;margin:3px;font-family:"微软雅黑";}
-#footer{width:800px;height:160px;}
-#footer div.tel{width:100%;height:30px;color:#993300;font-size:12px;margin-left:40px;margin-top:10px;margin-bottom:20px;}
-#footer div.tel p a{width:50px;height:32px;display:inline-block;vertical-align:middle;}
-#footer div.detail{width:100%;height:50px;margin-left:40px;color:#993300;font-size:12px;}
-#footer div.detail p{margin-top:5px;}
-#footer div.detail p.curr{font-weight:bold;}
-#footer div.footer-nav{width:280px;float:right;color:#993300;font-size:12px;}
-#footer div.footer-nav ul li{list-style:none;float:left;margin-top:10px;}
+        .photos {
+            margin: auto;
+            font-size: 0px;
+        }
+
     </style>
 </head>
 <body>
+    <link href="../Style/Css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Style/JS/bootstrap.min.js"></script>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 100px;background-color: #F9F9F9;">
+        <div style="width: 80%;height: 20px;margin-top: 20px;margin-left: 10%	;">
+            <span style="float: left;margin-top: 0.5%;">根据关键字搜索：</span><input type="text" class="form-control" style="width: 25%;float: left;margin-left: 2%;" placeholder="根据分类搜索 ">
+            <button type="button" class="btn btn-info" style="float: left;margin: 20px auto;">查询</button>
 
-    <div id="content">
-        <ul>
-            <li>
-                <img src="../缩略图/10197997_003647426000_2.jpg">
-                <div class="tit">
-                    <p>世界上最好的</p>
-                    <p>Nian糕</p>
-                </div>
-            </li>
-            <li>
-                <img src="../缩略图/3961114_020908597000_2.jpg">
-                <div class="tit">
-                    <p>世界上最好的</p>
-                    <p>Nian糕</p>
-                </div>
-            </li>
-            <li>
-                <img src="../缩略图/8649940_220505558734_2.jpg">
-                <div class="tit">
-                    <p>世界上最好的</p>
-                    <p>Nian糕</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div id="masonry" class="container-fluid">
-        <!--<div class="box">
-            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/10197997_003647426000_2.jpg" /></a>
+            <span style="float: left;margin-left: 12%;margin-top: 0.5%;">根据分类搜索 ：</span><input type="text" class="form-control" style="width: 25%;float: left;margin-left: 2%;" placeholder="根据分类搜索">
+            <button type="button" class="btn btn-info" style="float: left;margin-left: 3%;">查询</button>
         </div>
-        <div class="box">
-            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/3961114_020908597000_2.jpg" /></a>
-        </div>
-        <div class="box">
-            <a href="../缩略图/10197997_003647426000_2.jpg"><img src="../缩略图/8649940_220505558734_2.jpg" /></a>
-        </div>-->
-        ...
-    </div>
 
+    </nav>
+    <div class="datouwang-container">
+        <div class="photos" id="photos">
+        </div>
+    </div>
 </body>
 </html >
 <script type="text/javascript" >
 
-    $("#content ul li").hover(function(){//鼠标悬停
-        $(this).find("div").stop().animate({
-            "bottom":"0px"
-        },100);                
-    },function(){//鼠标离开
-        $(this).find("div").stop().animate({
-            "bottom":"-50px"
-        },100);
-    });
     AR.Form.onBeforeExecute = function ()
     {
-        AR.Ajax.post('GetData', null, { page: 1,sort:'测试' }, function (result) {
+        AR.Ajax.post('GetData', null, { page: 1 }, function (result) {
             if (result.success) {
                 for (var i = 0; i < result.rows.length; i++) {
-                    var div1 = document.getElementById("masonry");
+                    var div1 = document.getElementById("photos");
                     var div = document.createElement("div") //创建一个div
-                    div.className = "box";
-                    div.innerHTML = "<a href='"+result.rows[i]["thumbnailpath"]+"'><img src='"+result.rows[i]["thumbnailpath"]+"' /></a>";
+                    div.className = "photo";
+                    div.innerHTML = "<a href='"+result.rows[i].thumbnailpath+"'><img src='"+result.rows[i].thumbnailpath+"' /></a><div class='title' style='width:100px;'>"+result.rows[i].filename+"</div>";
                                         
                     div1.appendChild(div)//将div添加到body下面
 
                     //console.log(result.rows[i]["thumbnailpath"]);
                 }
+                $('.photos').gallerify({
+	                margin:30,
+	                mode:'default',
+	                lastRow:'adjust'
+                });	
                 //console.log(result.rows);
+            }
+        });
+        AR.Ajax.post('GetSort', null, null, function (result) {
+            if (result.success) {
+                for (var i = 0; i < result.rows.length; i++) {
+                    var header = document.getElementById("sort");
+                     var a = document.createElement("a") //创建一个a标签
+                    a.href = "#";
+                    a.innerHTML = "<lable class='link' value="+result.rows[i].name+ " onclick=\"lbclick(this)\">"+result.rows[i].name+ "</lable>";                
+                    header.appendChild(a)//将a添加到header下面
+                }
             }
         });
     }
 
-    $(function() {
-    var $container = $('#masonry');
-    $container.imagesLoaded(function() {
-    $container.masonry({
-            itemSelector: '.box',
-            gutter: 20,
-            isAnimated: true,
-        });
-    });
-    });
 
     var edit=true;//可控元素
             $(window).scroll(
@@ -131,7 +100,9 @@
                             edit=false;
                             console.log("来，跟着一起。哈哈哈哈哈哈");
                             setTimeout("edit=true;",1000);
-                        }
                     }
-            );
+
+                    }
+    );
+
 </script >

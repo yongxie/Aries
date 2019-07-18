@@ -140,6 +140,7 @@
     <Content Include="Demo\edit.html" />
     <Content Include="Demo\ImageManagement.html" />
     <Content Include="Demo\ImageShow.html" />
+    <Content Include="Demo\index.html" />
     <Content Include="Demo\inputDialog.html" />
     <Content Include="Demo\jointPrimary.html" />
     <Content Include="Demo\jointPrimaryEdit.html" />
@@ -151,8 +152,10 @@
     <Content Include="index.html" />
     <Content Include="login.html" />
     <Content Include="logout.html" />
-    <Content Include="Style\JS\jquery.html5uploader.js" />
+    <Content Include="Style\Css\bootstrap.min.css" />
+    <Content Include="Style\JS\bootstrap.min.js" />
     <Content Include="Style\JS\AriesJS\locale\Aries.Lang-zh_CN.js" />
+    <Content Include="Style\JS\jquery.xgallerify.min.js" />
     <Content Include="Style\Theme\Aries\default\index.css" />
     <Content Include="Style\Theme\Aries\default\locale\Html.Lang-zh_CN.js" />
     <Content Include="Style\Theme\Aries\default\locale\Html.Lang-en.js" />

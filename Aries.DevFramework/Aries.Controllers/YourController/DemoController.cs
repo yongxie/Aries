@@ -1,5 +1,4 @@
-﻿using Aliyun.OSS;
-using Aries.Core.Config;
+﻿using Aries.Core.Config;
 using Aries.Core.Extend;
 using CYQ.Data;
 using CYQ.Data.Table;
@@ -80,6 +79,15 @@ namespace Aries.Controllers
                 dt=action.Select(page, 20, string.IsNullOrEmpty(sort) ? null : "sort='"+sort+"'");
             }
             jsonResult= dt.ToJson();
+        }
+
+        public void GetSort() {
+            MDataTable dt;
+            using (MAction action = new MAction("sort"))
+            {
+                dt = action.Select();
+            }
+            jsonResult = dt.ToJson();
         }
 
         /**/

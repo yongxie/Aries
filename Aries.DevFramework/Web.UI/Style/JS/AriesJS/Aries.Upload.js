@@ -353,7 +353,7 @@
             var self = this;
 
             var input = document.createElement("input");
-            input.setAttribute('type', 'button');
+            input.setAttribute('type', 'file');
             input.setAttribute('multiple','true');
             input.setAttribute('name', this._settings.name);
 
@@ -362,15 +362,15 @@
                 // in Opera only 'browse' button
                 // is clickable and it is located at
                 // the right side of the input
-                'right': 10,
+                'right': 0,
                 'margin': 0,
                 'padding': 0,
-                'fontSize': '100px',
+                'fontSize': '480px',
                 'cursor': 'pointer'
             });
 
             var div = document.createElement("div");
-            div.setAttribute('id', 'file_upload_box1');
+            div.setAttribute('id', 'file_upload_box');
             addStyles(div, {
                 'display': 'block',
                 'position': 'absolute',

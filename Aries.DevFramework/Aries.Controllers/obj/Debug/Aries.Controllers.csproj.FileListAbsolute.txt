@@ -19,5 +19,4 @@ D:\work\Aries\Aries.DevFramework\Aries.Controllers\obj\Debug\Aries.Controllers.c
 D:\work\Aries\Aries.DevFramework\Aries.Controllers\obj\Debug\Aries.Controllers.csproj.CopyComplete
 D:\work\Aries\Aries.DevFramework\Aries.Controllers\obj\Debug\Aries.Controllers.dll
 D:\work\Aries\Aries.DevFramework\Aries.Controllers\obj\Debug\Aries.Controllers.pdb
-D:\work\Aries\Aries.DevFramework\Aries.Controllers\bin\Debug\Aliyun.OSS.dll
-D:\work\Aries\Aries.DevFramework\Aries.Controllers\bin\Debug\Aliyun.OSS.xml
+D:\work\Aries\Aries.DevFramework\Aries.Controllers\bin\Debug\CYQ.Data.pdb

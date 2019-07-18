@@ -1,0 +1,12 @@
+V5.8.2.3 Record On : 2019-07-18 09:40:52 : http://localhost:63984/Demo/ajax.html?sys_method=GetData&sys_rnd=0.7304690391701714
+
+Referer : http://localhost:63984/Demo/ImageShow.html
+
+MsSql Call Function::ExeScalar():对象名 'All_Sequences' 无效。
+MsSql.Testdb.SQL: 
+SELECT count(*) FROM All_Sequences where Sequence_name='SEQ_[FILES]'
+ExeScalar():对象名 'All_Sequences' 无效。
+
+
+---------------------------------------
+

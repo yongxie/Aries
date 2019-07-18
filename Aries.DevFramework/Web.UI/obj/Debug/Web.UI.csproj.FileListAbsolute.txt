@@ -27,3 +27,4 @@ D:\work\Aries\Aries.DevFramework\Web.UI\obj\Debug\Web.UI.csproj.CoreCompileInput
 D:\work\Aries\Aries.DevFramework\Web.UI\obj\Debug\Web.UI.csproj.CopyComplete
 D:\work\Aries\Aries.DevFramework\Web.UI\obj\Debug\Web.UI.dll
 D:\work\Aries\Aries.DevFramework\Web.UI\obj\Debug\Web.UI.pdb
+D:\work\Aries\Aries.DevFramework\Web.UI\bin\CYQ.Data.pdb

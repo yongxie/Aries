@@ -14,4 +14,3 @@ D:\work\Aries\Aries.DevFramework\Aries.Core\obj\Debug\Aries.Core.csproj.CoreComp
 D:\work\Aries\Aries.DevFramework\Aries.Core\obj\Debug\Aries.Core.csproj.CopyComplete
 D:\work\Aries\Aries.DevFramework\Aries.Core\obj\Debug\Aries.Core.dll
 D:\work\Aries\Aries.DevFramework\Aries.Core\obj\Debug\Aries.Core.pdb
-D:\work\Aries\Aries.DevFramework\Aries.Core\obj\Debug\Aries.Core.csprojAssemblyReference.cache
